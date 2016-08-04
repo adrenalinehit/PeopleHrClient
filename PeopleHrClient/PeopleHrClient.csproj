@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7F6AA7A-1A0F-4F02-B88D-39269F88162C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PeopleHrClient</RootNamespace>
+    <AssemblyName>PeopleHrClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\FieldWithHistory.cs" />
+    <Compile Include="Exceptions\PeopleHrClientException.cs" />
+    <Compile Include="Extensions\PersonExtensions.cs" />
+    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\Absence.cs" />
+    <Compile Include="Models\Holiday.cs" />
+    <Compile Include="Models\HolidayEntitlement.cs" />
+    <Compile Include="Models\PersonEmploymentDetail.cs" />
+    <Compile Include="Models\PersonBankDetail.cs" />
+    <Compile Include="Models\PersonContactDetail.cs" />
+    <Compile Include="Models\PersonFieldHistory.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonField.cs" />
+    <Compile Include="Models\PersonFieldHistoryForEffectiveDate.cs" />
+    <Compile Include="Models\PersonFieldHistoryForJobRole.cs" />
+    <Compile Include="Models\Requests\GetAbsenceDetailRequest.cs" />
+    <Compile Include="Models\Requests\GetAllDocumentRequest.cs" />
+    <Compile Include="Models\Requests\GetHistoryByEmployeeIdAndFieldNameRequest.cs" />
+    <Compile Include="Models\Requests\GetDocumentByIdRequest.cs" />
+    <Compile Include="Models\Requests\GetNextYearHolidayEntitlementRequest.cs" />
+    <Compile Include="Models\Requests\GetHolidayEntitlementRequest.cs" />
+    <Compile Include="Models\Requests\GetHolidayDetailRequest.cs" />
+    <Compile Include="Models\Requests\GetEmployeeDetailByIdRequest.cs" />
+    <Compile Include="Models\Responses\GetAbsenceDetailResponse.cs" />
+    <Compile Include="Models\Responses\GetAllDocumentResponse.cs" />
+    <Compile Include="Models\Responses\GetDocumentByIdResponse.cs" />
+    <Compile Include="Models\Responses\GetHistoryByEmployeeIdAndFieldNameResponse.cs" />
+    <Compile Include="Models\Responses\GetNextYearHolidayEntitlementResponse.cs" />
+    <Compile Include="Models\Responses\GetHolidayEntitlementResponse.cs" />
+    <Compile Include="Models\Responses\GetHolidayDetailResponse.cs" />
+    <Compile Include="Models\Responses\GetEmployeeDetailByIdResponse.cs" />
+    <Compile Include="Models\Responses\GetAllEmployeeDetailResponse.cs" />
+    <Compile Include="Models\Requests\GetAllEmployeeDetailRequest.cs" />
+    <Compile Include="PeopleHrService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

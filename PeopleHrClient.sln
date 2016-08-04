@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleHrClient", "PeopleHrClient\PeopleHrClient.csproj", "{D7F6AA7A-1A0F-4F02-B88D-39269F88162C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleHrClientTests", "PeopleHrClientTests\PeopleHrClientTests.csproj", "{38316B6A-4B8F-484E-B96F-ADA3A75D3F96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7F6AA7A-1A0F-4F02-B88D-39269F88162C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7F6AA7A-1A0F-4F02-B88D-39269F88162C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7F6AA7A-1A0F-4F02-B88D-39269F88162C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7F6AA7A-1A0F-4F02-B88D-39269F88162C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38316B6A-4B8F-484E-B96F-ADA3A75D3F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38316B6A-4B8F-484E-B96F-ADA3A75D3F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38316B6A-4B8F-484E-B96F-ADA3A75D3F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38316B6A-4B8F-484E-B96F-ADA3A75D3F96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = cf689043-001c-449d-af37-731514c608d7
+	EndGlobalSection
+EndGlobal

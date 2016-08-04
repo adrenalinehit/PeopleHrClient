@@ -1,17 +1,13 @@
-# QA-Tools
+# PeopleHrClient
 
-A Collection Of Automated Tests And Applications Used By The QA Team.
+A simple C# client used for making requests to PeopleHr;
 
-- BedeCTKTools
+## Instructions
 
-    > BedeCTKTools is a userscript that provides a few tools to speed up registering on sites and debugging issues.
+PeopleHrService is a static service which makes requests to the PeopleHr API,
+The methods used are named exactly the same as the demo requests on the [PeopleHr API test page](https://api.peoplehr.net/Pages/Functional/Default.aspx),
+Each Request takes its own request body and will return its own type of response body with the results found in .Results
 
-- DevAutoSmoke
+## Sample Usage
 
-    > DevAutoSmoke is a selenium suite which consists of login and registration tests across sites using zeus, these tests help QA's determine if DEV is safe to push to QA.
-    
-- ZApp
-    
-    > ZApp is an easy to use WPF application that makes web requests to certain endpoints across the bede platform, for more detailed information on ZApp features view the [Readme].
-
-   [Readme]: <https://github.com/BedeGaming/QA-Tools/blob/Latest/ZApp/README.md>
+Can be found in the unit tests, you must supply your own API key for making requests to the API.
