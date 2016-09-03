@@ -1,10 +1,8 @@
 ﻿namespace PeopleHrClient.Models.Requests
 {
-    public class GetAbsenceDetailRequest
+    public class GetAbsenceDetailRequest : PeopleHrRequest
     {
-        public string APIKey { get; set; }
-
-        public string Action
+        public new string Action
         {
             get { return "GetAbsenceDetail"; }
         }

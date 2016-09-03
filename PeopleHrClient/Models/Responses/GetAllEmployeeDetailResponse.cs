@@ -2,11 +2,8 @@
 
 namespace PeopleHrClient.Models.Responses
 {
-    public class GetAllEmployeeDetailResponse
+    public class GetAllEmployeeDetailResponse : PeopleHrResponse
     {
-        public bool isError;
-        public int Status;
-        public string Message;
         public IEnumerable<Person> Result;
     }
 }

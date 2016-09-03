@@ -1,10 +1,8 @@
 ﻿namespace PeopleHrClient.Models.Requests
 {
-    public class GetAllDocumentRequest
+    public class GetAllDocumentRequest : PeopleHrRequest
     {
-        public string APIKey { get; set; }
-
-        public string Action
+        public new string Action
         {
             get { return "GetAllDocument"; }
         }

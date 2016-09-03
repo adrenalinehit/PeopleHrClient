@@ -1,10 +1,8 @@
 ﻿namespace PeopleHrClient.Models.Requests
 {
-    public class GetEmployeeDetailByIdRequest
+    public class GetEmployeeDetailByIdRequest : PeopleHrRequest
     {
-        public string APIKey { get; set; }
-
-        public string Action
+        public new string Action
         {
             get { return "GetEmployeeDetailById"; }
         }

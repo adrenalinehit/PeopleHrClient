@@ -11,7 +11,7 @@ namespace PeopleHrClientTests
         private const string ApiKey = "";
 
         [TestMethod]
-        public void GetAllEmployeeDetailRequestReturnsEmployees()
+        public void SuccessfulGetAllEmployeeDetailRequestReturnsEmployees()
         {
             var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
             {
@@ -23,7 +23,19 @@ namespace PeopleHrClientTests
         }
 
         [TestMethod]
-        public void GetEmployeeDetailByIdRequestReturnsEmployee()
+        public void FailedGetAllEmployeeDetailRequestReturnsNoEmployees()
+        {
+            var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
+            {
+                APIKey = "",
+                IncludeLeavers = false
+            });
+
+            Assert.IsTrue(peopleHrUsers.Result == null);
+        }
+
+        [TestMethod]
+        public void SuccessfulGetEmployeeDetailByIdRequestReturnsEmployee()
         {
             var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
             {
@@ -38,6 +50,24 @@ namespace PeopleHrClientTests
             });
 
             Assert.IsTrue(peopleHrUser.Result != null);
+        }
+
+        [TestMethod]
+        public void FailedGetEmployeeDetailByIdRequestReturnsNoEmployee()
+        {
+            var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
+            {
+                APIKey = ApiKey,
+                IncludeLeavers = false
+            });
+
+            var peopleHrUser = PeopleHrService.GetEmployeeDetailById(new GetEmployeeDetailByIdRequest
+            {
+                APIKey = "",
+                EmployeeId = peopleHrUsers.Result.First().EmployeeId.DisplayValue
+            });
+
+            Assert.IsTrue(peopleHrUser.Result == null);
         }
     }
 }

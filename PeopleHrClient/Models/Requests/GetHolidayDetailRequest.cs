@@ -1,10 +1,8 @@
 ﻿namespace PeopleHrClient.Models.Requests
 {
-    public class GetHolidayDetailRequest
+    public class GetHolidayDetailRequest : PeopleHrRequest
     {
-        public string APIKey { get; set; }
-
-        public string Action
+        public new string Action
         {
             get { return "GetHolidayDetail"; }
         }

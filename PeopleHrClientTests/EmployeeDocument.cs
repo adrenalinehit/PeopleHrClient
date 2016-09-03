@@ -11,7 +11,7 @@ namespace PeopleHrClientTests
         private const string ApiKey = "";
 
         [TestMethod]
-        public void GetAllDocumentReturnsDocuments()
+        public void SuccessfulGetAllDocumentReturnsDocuments()
         {
             var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
             {
@@ -29,7 +29,25 @@ namespace PeopleHrClientTests
         }
 
         [TestMethod]
-        public void GetDocumentByIdReturnsDocument()
+        public void FailedGetAllDocumentReturnsNoDocuments()
+        {
+            var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
+            {
+                APIKey = ApiKey,
+                IncludeLeavers = false
+            });
+
+            var peopleHrUser = PeopleHrService.GetAllDocument(new GetAllDocumentRequest
+            {
+                APIKey = "",
+                EmployeeId = peopleHrUsers.Result.First().EmployeeId.DisplayValue
+            });
+
+            Assert.IsTrue(peopleHrUser.Result == null);
+        }
+
+        [TestMethod]
+        public void SuccessfulGetDocumentByIdReturnsDocument()
         {
             var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
             {
@@ -51,6 +69,31 @@ namespace PeopleHrClientTests
             });
 
             Assert.IsTrue(peopleHrUser.Result != null);
+        }
+
+        [TestMethod]
+        public void FailedGetDocumentByIdReturnsNoDocument()
+        {
+            var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
+            {
+                APIKey = ApiKey,
+                IncludeLeavers = false
+            });
+
+            var peopleHrUserDocuments = PeopleHrService.GetAllDocument(new GetAllDocumentRequest
+            {
+                APIKey = ApiKey,
+                EmployeeId = peopleHrUsers.Result.First().EmployeeId.DisplayValue
+            });
+
+            var peopleHrUser = PeopleHrService.GetDocumentById(new GetDocumentByIdRequest()
+            {
+                APIKey = "",
+                EmployeeId = peopleHrUsers.Result.First().EmployeeId.DisplayValue,
+                DocumentId = peopleHrUserDocuments.Result.First().DocumentId
+            });
+
+            Assert.IsTrue(peopleHrUser.Result == null);
         }
     }
 }

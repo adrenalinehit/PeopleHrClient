@@ -1,10 +1,7 @@
 ﻿namespace PeopleHrClient.Models.Responses
 {
-    public class GetEmployeeDetailByIdResponse
+    public class GetEmployeeDetailByIdResponse : PeopleHrResponse
     {
-        public bool isError;
-        public int Status;
-        public string Message;
         public Person Result;
     }
 }
