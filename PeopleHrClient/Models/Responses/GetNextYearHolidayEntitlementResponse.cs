@@ -1,10 +1,7 @@
 ﻿namespace PeopleHrClient.Models.Responses
 {
-    public class GetNextYearHolidayEntitlementResponse
+    public class GetNextYearHolidayEntitlementResponse : PeopleHrResponse
     {
-        public bool isError;
-        public int Status;
-        public string Message;
         public HolidayEntitlement Result;
     }
 }

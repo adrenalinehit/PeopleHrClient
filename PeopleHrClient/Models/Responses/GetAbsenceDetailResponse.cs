@@ -2,11 +2,8 @@
 
 namespace PeopleHrClient.Models.Responses
 {
-    public class GetAbsenceDetailResponse
+    public class GetAbsenceDetailResponse : PeopleHrResponse
     {
-        public bool isError;
-        public int Status;
-        public string Message;
         public IEnumerable<Absence> Result;
     }
 }

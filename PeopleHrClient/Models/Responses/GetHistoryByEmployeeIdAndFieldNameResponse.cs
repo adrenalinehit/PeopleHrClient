@@ -2,11 +2,8 @@
 
 namespace PeopleHrClient.Models.Responses
 {
-    public class GetHistoryByEmployeeIdAndFieldNameResponse
+    public class GetHistoryByEmployeeIdAndFieldNameResponse : PeopleHrResponse
     {
-        public bool isError;
-        public int Status;
-        public string Message;
         public IEnumerable<PersonFieldHistory> Result;
     }
 }

@@ -12,7 +12,7 @@ namespace PeopleHrClientTests
         private const string ApiKey = "";
 
         [TestMethod]
-        public void GeAbsenceDetailReturnsAbsences()
+        public void SuccessfulGetAbsenceDetailReturnsAbsences()
         {
             var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
             {
@@ -29,6 +29,26 @@ namespace PeopleHrClientTests
             });
 
             Assert.IsTrue(peopleHrUser.Result != null);
+        }
+
+        [TestMethod]
+        public void FailedGetAbsenceDetailReturnsNoAbsences()
+        {
+            var peopleHrUsers = PeopleHrService.GetAllEmployeeDetail(new GetAllEmployeeDetailRequest
+            {
+                APIKey = ApiKey,
+                IncludeLeavers = false
+            });
+
+            var peopleHrUser = PeopleHrService.GetAbsenceDetail(new GetAbsenceDetailRequest()
+            {
+                APIKey = "",
+                EmployeeId = peopleHrUsers.Result.First().EmployeeId.DisplayValue,
+                StartDate = DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd"),
+                EndDate = DateTime.Now.ToString("yyyy-MM-dd")
+            });
+
+            Assert.IsTrue(peopleHrUser.Result == null);
         }
     }
 }

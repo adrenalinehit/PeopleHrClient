@@ -6,7 +6,7 @@ namespace PeopleHrClient.Extensions
     {
         public static string GetFullName(this Person person)
         {
-            return $"{person.FirstName} {person.LastName}";
+            return $"{person.FirstName.DisplayValue} {person.LastName.DisplayValue}";
         }
     }
 }

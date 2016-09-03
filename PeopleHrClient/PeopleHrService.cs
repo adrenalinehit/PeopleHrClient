@@ -26,7 +26,20 @@ namespace PeopleHrClient
         {
             try
             {
-                return JsonConvert.DeserializeObject<GetAllEmployeeDetailResponse>(DoPostRequest("https://api.peoplehr.net/Employee", getAllEmployeeDetailRequest));
+                var responseContent = DoPostRequest("https://api.peoplehr.net/Employee", getAllEmployeeDetailRequest);
+                var response = JsonConvert.DeserializeObject<PeopleHrResponse>(responseContent);
+
+                if (response.isError)
+                {
+                    return new GetAllEmployeeDetailResponse
+                    {
+                        isError = response.isError,
+                        Message = response.Message,
+                        Status = response.Status
+                    };
+                }
+
+                return JsonConvert.DeserializeObject<GetAllEmployeeDetailResponse>(responseContent);
             }
             catch (Exception error)
             {
@@ -38,7 +51,20 @@ namespace PeopleHrClient
         {
             try
             {
-                return JsonConvert.DeserializeObject<GetEmployeeDetailByIdResponse>(DoPostRequest("https://api.peoplehr.net/Employee", getEmployeeDetailByIdRequest));
+                var responseContent = DoPostRequest("https://api.peoplehr.net/Employee", getEmployeeDetailByIdRequest);
+                var response = JsonConvert.DeserializeObject<PeopleHrResponse>(responseContent);
+
+                if (response.isError)
+                {
+                    return new GetEmployeeDetailByIdResponse
+                    {
+                        isError = response.isError,
+                        Message = response.Message,
+                        Status = response.Status
+                    };
+                }
+
+                return JsonConvert.DeserializeObject<GetEmployeeDetailByIdResponse>(responseContent);
             }
             catch (Exception error)
             {
@@ -50,7 +76,20 @@ namespace PeopleHrClient
         {
             try
             {
-                return JsonConvert.DeserializeObject<GetHolidayDetailResponse>(DoPostRequest("https://api.peoplehr.net/Holiday", getHolidayDetailRequest));
+                var responseContent = DoPostRequest("https://api.peoplehr.net/Holiday", getHolidayDetailRequest);
+                var response = JsonConvert.DeserializeObject<PeopleHrResponse>(responseContent);
+
+                if (response.isError)
+                {
+                    return new GetHolidayDetailResponse
+                    {
+                        isError = response.isError,
+                        Message = response.Message,
+                        Status = response.Status
+                    };
+                }
+
+                return JsonConvert.DeserializeObject<GetHolidayDetailResponse>(responseContent);
             }
             catch (Exception error)
             {
@@ -62,7 +101,20 @@ namespace PeopleHrClient
         {
             try
             {
-                return JsonConvert.DeserializeObject<GetAbsenceDetailResponse>(DoPostRequest("https://api.peoplehr.net/Absence", getAbsenceDetailRequest));
+                var responseContent = DoPostRequest("https://api.peoplehr.net/Absence", getAbsenceDetailRequest);
+                var response = JsonConvert.DeserializeObject<PeopleHrResponse>(responseContent);
+
+                if (response.isError)
+                {
+                    return new GetAbsenceDetailResponse
+                    {
+                        isError = response.isError,
+                        Message = response.Message,
+                        Status = response.Status
+                    };
+                }
+
+                return JsonConvert.DeserializeObject<GetAbsenceDetailResponse>(responseContent);
             }
             catch (Exception error)
             {
@@ -74,7 +126,20 @@ namespace PeopleHrClient
         {
             try
             {
-                return JsonConvert.DeserializeObject<GetAllDocumentResponse>(DoPostRequest("https://api.peoplehr.net/EmployeeDocument", getAllDocumentRequest));
+                var responseContent = DoPostRequest("https://api.peoplehr.net/EmployeeDocument", getAllDocumentRequest);
+                var response = JsonConvert.DeserializeObject<PeopleHrResponse>(responseContent);
+
+                if (response.isError)
+                {
+                    return new GetAllDocumentResponse
+                    {
+                        isError = response.isError,
+                        Message = response.Message,
+                        Status = response.Status
+                    };
+                }
+
+                return JsonConvert.DeserializeObject<GetAllDocumentResponse>(responseContent);
             }
             catch (Exception error)
             {
@@ -86,7 +151,20 @@ namespace PeopleHrClient
         {
             try
             {
-                return JsonConvert.DeserializeObject<GetDocumentByIdResponse>(DoPostRequest("https://api.peoplehr.net/EmployeeDocument", getDocumentByIdRequest));
+                var responseContent = DoPostRequest("https://api.peoplehr.net/EmployeeDocument", getDocumentByIdRequest);
+                var response = JsonConvert.DeserializeObject<PeopleHrResponse>(responseContent);
+
+                if (response.isError)
+                {
+                    return new GetDocumentByIdResponse
+                    {
+                        isError = response.isError,
+                        Message = response.Message,
+                        Status = response.Status
+                    };
+                }
+
+                return JsonConvert.DeserializeObject<GetDocumentByIdResponse>(responseContent);
             }
             catch (Exception error)
             {
@@ -98,7 +176,20 @@ namespace PeopleHrClient
         {
             try
             {
-                return JsonConvert.DeserializeObject<GetHolidayEntitlementResponse>(DoPostRequest("https://api.peoplehr.net/HolidayEntitlements", getHolidayEntitlementRequest));
+                var responseContent = DoPostRequest("https://api.peoplehr.net/HolidayEntitlements", getHolidayEntitlementRequest);
+                var response = JsonConvert.DeserializeObject<PeopleHrResponse>(responseContent);
+
+                if (response.isError)
+                {
+                    return new GetHolidayEntitlementResponse
+                    {
+                        isError = response.isError,
+                        Message = response.Message,
+                        Status = response.Status
+                    };
+                }
+
+                return JsonConvert.DeserializeObject<GetHolidayEntitlementResponse>(responseContent);
             }
             catch (Exception error)
             {
@@ -110,7 +201,20 @@ namespace PeopleHrClient
         {
             try
             {
-                return JsonConvert.DeserializeObject<GetNextYearHolidayEntitlementResponse>(DoPostRequest("https://api.peoplehr.net/HolidayEntitlements", getNextYearHolidayEntitlementRequest));
+                var responseContent = DoPostRequest("https://api.peoplehr.net/HolidayEntitlements", getNextYearHolidayEntitlementRequest);
+                var response = JsonConvert.DeserializeObject<PeopleHrResponse>(responseContent);
+
+                if (response.isError)
+                {
+                    return new GetNextYearHolidayEntitlementResponse
+                    {
+                        isError = response.isError,
+                        Message = response.Message,
+                        Status = response.Status
+                    };
+                }
+
+                return JsonConvert.DeserializeObject<GetNextYearHolidayEntitlementResponse>(responseContent);
             }
             catch (Exception error)
             {
@@ -122,7 +226,20 @@ namespace PeopleHrClient
         {
             try
             {
-                return JsonConvert.DeserializeObject<GetHistoryByEmployeeIdAndFieldNameResponse>(DoPostRequest("https://api.peoplehr.net/History", getHistoryByEmployeeIdAndFieldNameRequest));
+                var responseContent = DoPostRequest("https://api.peoplehr.net/History", getHistoryByEmployeeIdAndFieldNameRequest);
+                var response = JsonConvert.DeserializeObject<PeopleHrResponse>(responseContent);
+
+                if (response.isError)
+                {
+                    return new GetHistoryByEmployeeIdAndFieldNameResponse
+                    {
+                        isError = response.isError,
+                        Message = response.Message,
+                        Status = response.Status
+                    };
+                }
+
+                return JsonConvert.DeserializeObject<GetHistoryByEmployeeIdAndFieldNameResponse>(responseContent);
             }
             catch (Exception error)
             {

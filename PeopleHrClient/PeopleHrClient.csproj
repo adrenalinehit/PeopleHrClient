@@ -64,6 +64,7 @@
     <Compile Include="Models\PersonField.cs" />
     <Compile Include="Models\PersonFieldHistoryForEffectiveDate.cs" />
     <Compile Include="Models\PersonFieldHistoryForJobRole.cs" />
+    <Compile Include="Models\Requests\PeopleHrRequest.cs" />
     <Compile Include="Models\Requests\GetAbsenceDetailRequest.cs" />
     <Compile Include="Models\Requests\GetAllDocumentRequest.cs" />
     <Compile Include="Models\Requests\GetHistoryByEmployeeIdAndFieldNameRequest.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Models\Responses\GetEmployeeDetailByIdResponse.cs" />
     <Compile Include="Models\Responses\GetAllEmployeeDetailResponse.cs" />
     <Compile Include="Models\Requests\GetAllEmployeeDetailRequest.cs" />
+    <Compile Include="Models\Responses\PeopleHrResponse.cs" />
     <Compile Include="PeopleHrService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
